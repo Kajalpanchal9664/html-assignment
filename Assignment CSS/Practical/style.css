@@ -1,0 +1,33 @@
+.main {
+    height: auto;
+    width: 200px;
+    border: 0px solid black;
+    padding: 20px;
+    margin: 100px auto;
+    background-color: rgb(101, 204, 223);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    padding-bottom: 30px;
+}
+
+.form-title {
+    color: #333;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+}
+
+#submit-btn {
+
+    color: rgb(246, 246, 248);
+    background-color: rgb(76, 76, 240);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 85%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: blue;
+
+}
