@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Bookings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>All Bookings</h1>
+    <table border="1" width="100%" cellpadding="10" id="bookingTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Date</th>
+          <th>Concern</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p id="noData"></p>
+    <a href="index.html">Back to Form</a>
+  </div>
+
+  <script>
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    let tbody = document.querySelector("#bookingTable tbody");
+    let noData = document.getElementById("noData");
+
+    if (bookings.length === 0) {
+      noData.textContent = "No bookings available";
+      document.getElementById("bookingTable").style.display = "none";
+    } else {
+      bookings.forEach(b => {
+        let row = `<tr>
+          <td>${b.name}</td>
+          <td>${b.phone}</td>
+          <td>${b.email}</td>
+          <td>${b.age}</td>
+          <td>${b.date}</td>
+          <td>${b.concern}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+  </script>
+</body>
+</html>
